@@ -24,8 +24,10 @@ ActiveRecord::Schema.define(version: 2018_11_28_231355) do
   end
 
   create_table "specials", force: :cascade do |t|
-    t.integer "name"
+    t.text "title"
     t.integer "length"
+    t.integer "comedian_id"
+    t.text "photo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

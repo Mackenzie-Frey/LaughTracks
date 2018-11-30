@@ -1,5 +1,6 @@
 class Special < ActiveRecord::Base
   belongs_to :comedians
 
-  validates :name, presence: true
+  validates :title, presence: true
+  validates :length, presence: true
 end
