@@ -1,6 +1,8 @@
 <section id="statistics" >
   <h1>Statistics</h1>
+  <h3>Average Age of Comedians: <%=Comedian.average_age%> years old</h3>
 </section>
+
 <h2>Comedians</h2>
   <% @comedians.each do |comedian| %>
     <div id="comedian-<%=comedian.id%>">

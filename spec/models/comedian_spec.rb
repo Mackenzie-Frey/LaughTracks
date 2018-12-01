@@ -10,6 +10,12 @@ RSpec.describe Comedian do
         comic = Comedian.create(name: 'Mitch Hedberg')
         expect(comic).to_not be_valid
       end
+
+      it 'should output correct statistics' do
+        comedian_1 = Comedian.create(name: "Sally", age: 33, city: "New York")
+        comedian_2 = Comedian.create(name: "Bill", age: 23, city: "LA")
+        expect(Comedian.average_age).to eq 28
+      end
     end
   end
 end
