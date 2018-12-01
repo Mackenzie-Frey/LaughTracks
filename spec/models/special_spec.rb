@@ -12,11 +12,13 @@ RSpec.describe Special do
     end
   end
   describe 'Visiting the Index Page' do
-    it 'should output average special run time' do
-      Special.create(title: "Title 1", length: 30)
-      Special.create(title: "Title 2", length: 40)
-      Special.create(title: "Title 3", length: 50)
-      expect(Special.average_length).to eq 40
+    describe 'Statistics' do
+      it 'should output average special run time' do
+        Special.create(title: "Title 1", length: 30)
+        Special.create(title: "Title 2", length: 40)
+        Special.create(title: "Title 3", length: 50)
+        expect(Special.average_length).to eq 40
+      end
     end
   end
 end
