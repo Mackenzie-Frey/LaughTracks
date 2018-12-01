@@ -1,6 +1,7 @@
 <section id="statistics" >
   <h1>Statistics</h1>
-  <h3>Average Age of Comedians: <%=Comedian.average_age%> years old</h3>
+  <h3>Average Age of Comedians: <%=Comedian.average_age.to_i%> years old</h3>
+  <h3>All Cities: <%=Comedian.all_cities.join(", ")%></h3>
 </section>
 
 <h2>Comedians</h2>

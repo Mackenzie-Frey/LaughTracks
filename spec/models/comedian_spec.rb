@@ -11,10 +11,12 @@ RSpec.describe Comedian do
         expect(comic).to_not be_valid
       end
 
-      it 'should output correct statistics' do
+      it 'should output correct statistics for age & city list' do
         comedian_1 = Comedian.create(name: "Sally", age: 33, city: "New York")
-        comedian_2 = Comedian.create(name: "Bill", age: 23, city: "LA")
+        comedian_2 = Comedian.create(name: "Bill", age: 23, city: "L.A.")
         expect(Comedian.average_age).to eq 28
+        comedian_2 = Comedian.create(name: "Bill", age: 23, city: "L.A.")
+        expect(Comedian.all_cities).to eq ["New York", "L.A."]
       end
     end
   end
