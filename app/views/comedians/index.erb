@@ -1,10 +1,17 @@
 <h1>Comedians</h1>
 
 <% @comedians.each do |comedian| %>
-  <p>
-    <%= comedian.name %>
-    <%= comedian.age %>
-    <%= comedian.city %>
+  <div id="comedian-<%=comedian.id%>">
+    <p>
+      <%= comedian.name %>
+      Age: <%= comedian.age %>
+      City: <%= comedian.city %>
 
-  </p>
+    </p>
+    <% comedian.specials.each do |special| %>
+      <%=special.title%>
+      Length: <%=special.length%>
+      <img src="<%= special.photo %>">
+    <% end %>
+  </div>
 <% end %>
