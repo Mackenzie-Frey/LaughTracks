@@ -32,8 +32,13 @@ RSpec.describe "Comedian Index Page" do
     end
 
     it "should display an area at the top of the page called statistics" do
+      comedian_1 = Comedian.create(name: "Sally", age: 33, city: "New York")
+      comedian_2 = Comedian.create(name: "Bill", age: 23, city: "LA")
       visit '/comedians'
-      expect(page).to have_content("Statistics")
+      within "#statistics" do
+        expect(page).to have_content("Statistics")
+        expect(page).to have_content("Average Age of Comedians: #{Comedian.average_age} years old")
+      end
     end
 
   end
