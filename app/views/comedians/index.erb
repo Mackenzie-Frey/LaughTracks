@@ -8,15 +8,14 @@
 <h2>Comedians</h2>
   <% @comedians.each do |comedian| %>
     <div id="comedian-<%=comedian.id%>">
-      <p>
-        <%= comedian.name %>
-        Age: <%= comedian.age %>
-        City: <%= comedian.city %>
+      <p><%= comedian.name %></p>
+      <p>Age: <%= comedian.age %></p>
+      <p>City: <%= comedian.city %></p>
+      <p>Total Specials: <%= comedian.specials.count %></p>
 
-      </p>
       <% comedian.specials.each do |special| %>
-        <%=special.title%>
-        Length: <%=special.length%>
+        <p><%=special.title%></p>
+        <p>Length: <%=special.length%></p>
         <img src="<%= special.photo %>">
       <% end %>
     </div>
