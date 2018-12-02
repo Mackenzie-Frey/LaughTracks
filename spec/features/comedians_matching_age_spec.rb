@@ -1,6 +1,6 @@
 RSpec.describe "Comedian of Specific Age" do
   context "When a user visits /comedians?age=34" do
-    it "shows information about matching comedians & their stats" do
+    it 'shows information about matching comedians & their stats' do
       comedian_1 = Comedian.create(name: "Sally", age: 33, city: "New York")
       comedian_2 = Comedian.create(name: "Bob", age: 34, city: "New York")
       comedian_3 = Comedian.create(name: "Bill", age: 34, city: "LA")
