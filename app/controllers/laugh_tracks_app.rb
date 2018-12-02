@@ -1,5 +1,5 @@
 class LaughTracksApp < Sinatra::Base
-  set :root, File.expand_path("..", __dir__)
+  set :root, File.expand_path('..', __dir__)
 
   get '/comedians' do
     if params[:age]
@@ -10,5 +10,14 @@ class LaughTracksApp < Sinatra::Base
       @specials = Special.where(comedian_id: @comedians.ids)
     end
     erb :'comedians/index'
+  end
+
+  get '/comedians/new' do
+    erb :'comedians/new'
+  end
+
+  post '/comedians' do
+    @comedians = Comedian.create(params[:comedian])
+    redirect '/comedians'
   end
 end
