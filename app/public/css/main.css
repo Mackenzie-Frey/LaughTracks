@@ -1,4 +1,19 @@
+#whole-page{
+  background-color: pink;
+}
+
+header {
+  float: center;
+  background-color: grey;
+  height: 100px;
+}
+
 img {
   width: 110px;
   height: 130px;
 }
+
+/* footer {
+  background-color: blue;
+  width: 10%;
+} */
