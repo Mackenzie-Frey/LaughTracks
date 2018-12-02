@@ -1,5 +1,4 @@
 class LaughTracksApp < Sinatra::Base
-  # what does the below do?
   set :root, File.expand_path("..", __dir__)
 
   get '/comedians' do
@@ -8,6 +7,7 @@ class LaughTracksApp < Sinatra::Base
       @specials = Special.where(comedian_id: @comedians.ids)
     else
       @comedians = Comedian.all
+      @specials = Special.where(comedian_id: @comedians.ids)
     end
     erb :'comedians/index'
   end

@@ -18,6 +18,8 @@ RSpec.describe "Comedian of Specific Age" do
       expect(page).not_to have_content(comedian_1.name)
       expect(page).not_to have_content(comedian_4.name)
       expect(page).to have_content(comedian_2.specials.name)
+      expect(page).to have_content("Average Age of Comedians: 34 years old")
+      expect(page).to have_content(Comedian.all_cities.join(", "))
     end
   end
 end
