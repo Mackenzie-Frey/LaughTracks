@@ -1,12 +1,12 @@
 <section id='statistics'>
-  <h1>Statistics</h1>
+  <h2>Statistics</h2>
   <p>Average Age of Comedians: <%=@comedians.average_age.to_i%> years old</p>
   <p>Total TV Specials: <%= @specials.count %></p>
   <p>Average TV Special Run Time: <%=@specials.average_length.to_i%> minutes</p>
   <p>All Cities: <%=@comedians.all_cities.join(', ')%></p>
 </section>
 
-<h2>Comedians</h2>
+<div class='comedian-header-container'><h1>Comedians</h1></div>
   <% @comedians.each do |comedian| %>
   <section id='all-comedians'>
     <div id="comedian-<%=comedian.id%>">
@@ -16,7 +16,7 @@
       <p>Total Specials: <%= comedian.specials.count %></p>
 
       <% comedian.specials.each do |special| %>
-        <p>Special Name: </b> <%=special.title%></p>
+        <p>Special Name: </br> <%=special.title%></p>
         <p>Length: <%=special.length%> min</p>
         <img src="<%= special.photo %>">
       <% end %>
