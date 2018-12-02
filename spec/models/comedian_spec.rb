@@ -13,12 +13,13 @@ RSpec.describe Comedian do
     end
   end
   describe 'Statistics' do
-    it 'should output correct statistics for age & city list' do
-      Comedian.create(name: "Sally", age: 33, city: "New York")
-      Comedian.create(name: "Bill", age: 23, city: "L.A.")
-      expect(Comedian.average_age).to eq 28
-      Comedian.create(name: "Bob", age: 77, city: "L.A.")
-      expect(Comedian.all_cities).to eq ["New York", "L.A."]
-    end
+      it 'should output correct statistics for age & city list' do
+        Comedian.create(name: "Sally", age: 33, city: "New York")
+        Comedian.create(name: "Bill", age: 23, city: "L.A.")
+        expect(Comedian.average_age).to eq 28
+
+        Comedian.create(name: "Bob", age: 77, city: "L.A.")
+        expect(Comedian.all_cities).to eq ["New York", "L.A."]
+      end
   end
 end

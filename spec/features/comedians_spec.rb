@@ -32,8 +32,8 @@ RSpec.describe "Comedian Index Page" do
     end
 
     it "should display an area at the top of the page called statistics" do
-      comedian_1 = Comedian.create(name: "Sally", age: 33, city: "New York")
-      comedian_2 = Comedian.create(name: "Bill", age: 23, city: "L.A.")
+      Comedian.create(name: "Sally", age: 33, city: "New York")
+      Comedian.create(name: "Bill", age: 23, city: "L.A.")
       expected = Comedian.all_cities.join(", ")
       visit '/comedians'
       within "#statistics" do
