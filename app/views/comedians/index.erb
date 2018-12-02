@@ -7,19 +7,19 @@
 </section>
 
 <h2>Comedians</h2>
-  <section id="all-comedians">
-    <% @comedians.each do |comedian| %>
-      <div id="comedian-<%=comedian.id%>">
-        <h4><%= comedian.name %></h4>
-        <p>Age: <%= comedian.age %></p>
-        <p>City: <%= comedian.city %></p>
-        <p>Total Specials: <%= comedian.specials.count %></p>
+  <% @comedians.each do |comedian| %>
+  <section id='all-comedians'>
+    <div id="comedian-<%=comedian.id%>">
+      <h4><%= comedian.name %></h4>
+      <p>Age: <%= comedian.age %></p>
+      <p>City: <%= comedian.city %></p>
+      <p>Total Specials: <%= comedian.specials.count %></p>
 
-        <% comedian.specials.each do |special| %>
-          <p><%=special.title%></p>
-          <p>Length: <%=special.length%></p>
-          <img src="<%= special.photo %>">
-        <% end %>
+      <% comedian.specials.each do |special| %>
+        <p><%=special.title%></p>
+        <p>Length: <%=special.length%> min</p>
+        <img src="<%= special.photo %>">
+      <% end %>
     </div>
   </section>
 <% end %>
