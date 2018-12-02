@@ -16,7 +16,7 @@
       <p>Total Specials: <%= comedian.specials.count %></p>
 
       <% comedian.specials.each do |special| %>
-        <p><%=special.title%></p>
+        <p>Special Name: </b> <%=special.title%></p>
         <p>Length: <%=special.length%> min</p>
         <img src="<%= special.photo %>">
       <% end %>
