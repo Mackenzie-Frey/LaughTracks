@@ -1,19 +1,13 @@
 #whole-page{
-  background-color: pink;
+  background-color: black;
 }
 
-header {
-  float: center;
-  background-color: grey;
-  height: 100px;
+h1, h2, h3, h4, p {
+  color: white;
+  font-family: "Courier New";
 }
 
 img {
   width: 110px;
   height: 130px;
 }
-
-/* footer {
-  background-color: blue;
-  width: 10%;
-} */
