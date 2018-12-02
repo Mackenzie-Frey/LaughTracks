@@ -28,19 +28,20 @@ RSpec.describe "Comedian Index Page" do
         expect(page).to have_content(special_2.title)
         expect(page).to have_content("Length: #{special_2.length}")
         expect(page).to have_css("img[src='#{special_2.photo}']")
+        expect(page).to have_content("Total Specials: #{comedian_1.specials.count}")
       end
     end
 
     it "should display an area at the top of the page called statistics" do
       Comedian.create(name: "Sally", age: 33, city: "New York")
       Comedian.create(name: "Bill", age: 23, city: "L.A.")
-      expected = Comedian.all_cities.join(", ")
       visit '/comedians'
       within "#statistics" do
         expect(page).to have_content("Statistics")
         expect(page).to have_content("Average Age of Comedians: #{Comedian.average_age.to_i} years old")
-        expect(page).to have_content("All Cities: #{expected}")
+        expect(page).to have_content("All Cities: #{Comedian.all_cities.join(", ")}")
         expect(page).to have_content("Average TV Special Run Time: #{Special.average_length.to_i} minutes")
+        expect(page).to have_content("Total TV Specials: #{Special.count}")
       end
     end
 
