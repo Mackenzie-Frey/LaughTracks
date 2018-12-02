@@ -41,6 +41,7 @@ RSpec.describe "Comedian Index Page" do
         expect(page).to have_content("Average Age of Comedians: #{Comedian.average_age.to_i} years old")
         expect(page).to have_content("All Cities: #{Comedian.all_cities.join(", ")}")
         expect(page).to have_content("Average TV Special Run Time: #{Special.average_length.to_i} minutes")
+        expect(page).to have_content("Total TV Specials: #{Special.count}")
       end
     end
 
