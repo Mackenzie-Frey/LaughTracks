@@ -5,12 +5,12 @@ RSpec.describe 'Comedian Index Page' do
       comedian_2 = Comedian.create(name: 'Bill', age: 23, city: 'LA')
       visit '/comedians'
       within "#comedian-#{comedian_1.id}" do
-        expect(page).to have_content(comedian_1.name)
+        expect(page).to have_content(comedian_1.name.upcase)
         expect(page).to have_content("Age: #{comedian_1.age}")
         expect(page).to have_content(comedian_1.city)
       end
       within "#comedian-#{comedian_2.id}" do
-        expect(page).to have_content(comedian_2.name)
+        expect(page).to have_content(comedian_2.name.upcase)
         expect(page).to have_content("Age: #{comedian_2.age}")
         expect(page).to have_content(comedian_2.city)
       end

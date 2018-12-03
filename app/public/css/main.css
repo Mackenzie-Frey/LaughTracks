@@ -25,11 +25,12 @@ header h1{
   border-color: #0F0F0F;
   border-radius: 5px;
   padding: 20px;
-  margin-left: 400px;
-  margin-right: 400px;
+  margin-left: 200px;
+  margin-right: 200px;
   background-color: #191919;
   display: flex;
   justify-content: center;
+  min-width: 800px;
 }
 
 #statistics h2{
@@ -44,7 +45,7 @@ header h1{
 .comedian-header-container h1{
   padding: 15px;
   padding-top: 40px;
-  font-size: 50px;
+  font-size: 60px;
   display: flex;
   justify-content: center;
 }

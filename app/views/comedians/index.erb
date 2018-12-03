@@ -11,7 +11,7 @@
   <section class='all-comedians'>
     <div id="comedian-<%=comedian.id%>">
       <div class='comedian-content'>
-        <h4><%= comedian.name %></h4>
+        <h4><%= comedian.name.upcase %></h4>
         <p>Age: <%= comedian.age %></p>
         <p>City: <%= comedian.city %></p>
         <p>Total Specials: <%= comedian.specials.count %></p>
