@@ -37,7 +37,7 @@ RSpec.describe 'Comedian Index Page' do
       Comedian.create(name: 'Bill', age: 23, city: 'L.A.')
       visit '/comedians'
       within "#statistics" do
-        expect(page).to have_content('Statistics')
+        expect(page).to have_content('STATISTICS')
         expect(page).to have_content("Average Age of Comedians: #{Comedian.average_age.to_i} years old")
         expect(page).to have_content("All Cities: #{Comedian.all_cities.join(', ')}")
         expect(page).to have_content("Average TV Special Run Time: #{Special.average_length.to_i} minutes")
