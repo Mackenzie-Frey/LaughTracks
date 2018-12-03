@@ -7,8 +7,8 @@
 }
 
 img {
-  width: 150px;
-  height: 150px;
+  width: 380px;
+  height: 380px;
 }
 
 header h1{
@@ -20,7 +20,7 @@ header h1{
 }
 
 #statistics{
-  border-style: solid;
+  border-style: dotted;
   border-width: 5px;
   border-color: #0F0F0F;
   border-radius: 5px;
@@ -28,8 +28,19 @@ header h1{
   margin-left: 400px;
   margin-right: 400px;
   background-color: #191919;
+  display: flex;
+  justify-content: center;
 }
 
+#statistics h2{
+  padding: 10px;
+  padding-right: 25px;
+}
+
+#statistics p{
+  margin: 12px;
+  padding-top: 10px;
+}
 .comedian-header-container h1{
   padding: 15px;
   padding-top: 40px;
@@ -40,13 +51,20 @@ header h1{
 
 .all-comedians{
   display: inline-block;
-  border-style: dotted;
+  border-style: solid;
   border-width: 4px;
   border-color: #191919;
   border-radius: 5px;
-  padding: 4px;
-  margin: 4px;
+  padding: 10px;
+  margin: 20px;
+  margin-bottom: 100px;
   background-color: #0F0F0F;
+}
+.all-comedians p{
+  font-size: 19px;
+  display: flex;
+  justify-content: center;
+  font-style: italic;
 }
 
 .comedian-content{
@@ -63,11 +81,19 @@ header h1{
 }
 
 .all-comedians h4{
-    font-size: 20px;
+    font-size: 37px;
+    display: flex;
+    justify-content: center;
+}
+
+header h3{
+  font-size: 50px;
+  padding-top: 9px;
 }
 
 form {
   padding: 35px;
   display: flex;
   flex-direction: column;
+  font-size: 18px;
 }
