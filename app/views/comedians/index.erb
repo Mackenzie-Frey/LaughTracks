@@ -6,20 +6,22 @@
   <p>All Cities: <%=@comedians.all_cities.join(', ')%></p>
 </section>
 
-<div class='comedian-header-container'><h1>Comedians</h1></div>
+<div class='comedian-header-container'><h1>COMEDIANS</h1></div>
   <% @comedians.each do |comedian| %>
-  <section id='all-comedians'>
+  <section class='all-comedians'>
     <div id="comedian-<%=comedian.id%>">
-      <h4><%= comedian.name %></h4>
-      <p>Age: <%= comedian.age %></p>
-      <p>City: <%= comedian.city %></p>
-      <p>Total Specials: <%= comedian.specials.count %></p>
+      <div class='comedian-content'>
+        <h4><%= comedian.name %></h4>
+        <p>Age: <%= comedian.age %></p>
+        <p>City: <%= comedian.city %></p>
+        <p>Total Specials: <%= comedian.specials.count %></p>
 
-      <% comedian.specials.each do |special| %>
-        <p>Special Name: </br> <%=special.title%></p>
-        <p>Length: <%=special.length%> min</p>
-        <img src="<%= special.photo %>">
-      <% end %>
+        <% comedian.specials.each do |special| %>
+          <p>Special Name: </br> <%=special.title%></p>
+          <p>Length: <%=special.length%> min</p>
+          <img src="<%= special.photo %>">
+        <% end %>
+      </div>
     </div>
   </section>
 <% end %>
