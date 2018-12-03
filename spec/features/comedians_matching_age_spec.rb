@@ -13,10 +13,10 @@ RSpec.describe 'Comedian of Specific Age' do
 
       visit '/comedians?age=34'
 
-      expect(page).to have_content(comedian_2.name)
-      expect(page).to have_content(comedian_3.name)
-      expect(page).to_not have_content(comedian_1.name)
-      expect(page).to_not have_content(comedian_4.name)
+      expect(page).to have_content(comedian_2.name.upcase)
+      expect(page).to have_content(comedian_3.name.upcase)
+      expect(page).to_not have_content(comedian_1.name.upcase)
+      expect(page).to_not have_content(comedian_4.name.upcase)
       expect(page).to have_content(comedian_2.specials.name)
       expect(page).to have_content('Average Age of Comedians: 34 years old')
       expect(page).to have_content(Comedian.all_cities.join(', '))

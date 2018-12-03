@@ -5,12 +5,12 @@ RSpec.describe 'Comedian Index Page' do
       comedian_2 = Comedian.create(name: 'Bill', age: 23, city: 'LA')
       visit '/comedians'
       within "#comedian-#{comedian_1.id}" do
-        expect(page).to have_content(comedian_1.name)
+        expect(page).to have_content(comedian_1.name.upcase)
         expect(page).to have_content("Age: #{comedian_1.age}")
         expect(page).to have_content(comedian_1.city)
       end
       within "#comedian-#{comedian_2.id}" do
-        expect(page).to have_content(comedian_2.name)
+        expect(page).to have_content(comedian_2.name.upcase)
         expect(page).to have_content("Age: #{comedian_2.age}")
         expect(page).to have_content(comedian_2.city)
       end
@@ -37,7 +37,7 @@ RSpec.describe 'Comedian Index Page' do
       Comedian.create(name: 'Bill', age: 23, city: 'L.A.')
       visit '/comedians'
       within "#statistics" do
-        expect(page).to have_content('Statistics')
+        expect(page).to have_content('STATISTICS')
         expect(page).to have_content("Average Age of Comedians: #{Comedian.average_age.to_i} years old")
         expect(page).to have_content("All Cities: #{Comedian.all_cities.join(', ')}")
         expect(page).to have_content("Average TV Special Run Time: #{Special.average_length.to_i} minutes")

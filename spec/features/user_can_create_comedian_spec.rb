@@ -9,7 +9,7 @@ RSpec.describe 'As a visitor' do
     click_button 'Submit'
 
     expect(current_path).to eq('/comedians')
-    expect(page).to have_content('Sandra')
+    expect(page).to have_content('SANDRA')
     expect(page).to have_content(24)
     expect(page).to have_content('Philly')
   end
